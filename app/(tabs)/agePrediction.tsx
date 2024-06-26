@@ -2,47 +2,33 @@ import React, { useState } from "react";
 import { View, TextInput, Button, Text, StyleSheet } from "react-native";
 import axios from "axios";
 
-export default function genderPrediction() {
+export default function agePrediction() {
   const [name, setName] = useState("");
-  const [gender, setGender] = useState("");
-  const [color, setColor] = useState("");
+  const [age, setAge] = useState("");
 
-  const predictGender = async () => {
+  const predictAge = async () => {
     try {
-      const response = await axios.get(
-        `https://api.genderize.io/?name=${name}`
-      );
-      const { gender } = response.data;
-      setGender(gender);
-
-      // Set color based on gender
-      if (gender === "male") {
-        setColor("blue");
-        setGender("Masculino");
-      } else if (gender === "female") {
-        setColor("pink");
-        setGender("Femenino");
-      } else {
-        setColor("gray");
-      }
+      const response = await axios.get(`https://api.agify.io/?name=${name}`);
+      const { age } = response.data;
+      setAge(age);
     } catch (error) {
-      console.error("Error fetching gender prediction:", error);
+      console.error("Error fetching age prediction:", error);
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Predecir Género</Text>
+      <Text style={styles.title}>Predecir Edad</Text>
       <TextInput
         style={styles.input}
         placeholder="Introduce un nombre..."
         value={name}
         onChangeText={(text) => setName(text)}
       />
-      <Button title="Predecir" onPress={predictGender} />
-      {gender ? (
-        <View style={[styles.genderBox, { backgroundColor: color }]}>
-          <Text style={styles.genderText}>{gender}</Text>
+      <Button title="Predecir" onPress={predictAge} />
+      {age ? (
+        <View style={[styles.ageBox, { backgroundColor: "gray" }]}>
+          <Text style={styles.ageText}>{age} años</Text>
         </View>
       ) : null}
     </View>
@@ -72,12 +58,12 @@ const styles = StyleSheet.create({
     width: "70%",
     borderRadius: 10,
   },
-  genderBox: {
+  ageBox: {
     marginTop: 20,
     padding: 10,
     borderRadius: 10,
   },
-  genderText: {
+  ageText: {
     color: "#fff",
     fontSize: 18,
     textAlign: "center",
