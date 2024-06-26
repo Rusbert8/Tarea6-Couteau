@@ -1,7 +1,5 @@
 import React from "react";
 import { View, Text, StyleSheet, Platform, Image } from "react-native";
-import YoutubeIframe from "react-native-youtube-iframe";
-import Video from "react-native-video";
 
 export default function Portada() {
   return (
