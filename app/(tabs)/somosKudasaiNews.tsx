@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Linking,
   ScrollView,
+  Dimensions,
 } from "react-native";
 
 const API_URL = "https://somoskudasai.com/wp-json/wp/v2/posts?per_page=3";
@@ -29,7 +30,7 @@ interface Post {
   };
 }
 
-export default function SomosKudasaiNews() {
+export default function somosKudasaiNews() {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
@@ -61,7 +62,7 @@ export default function SomosKudasaiNews() {
         />
       </TouchableOpacity>
       {posts.map((post) => (
-        <View style={styles.postContainer}>
+        <View style={styles.postContainer} key={post.id}>
           <View style={styles.postContent}>
             <Image
               source={{
@@ -69,7 +70,7 @@ export default function SomosKudasaiNews() {
               }}
               style={styles.postImage}
             />
-            <View style={styles.postText}>
+            <View style={styles.postTextContainer}>
               <Text style={styles.postTitle}>{post.title.rendered}</Text>
               <Text style={styles.postSummary} numberOfLines={3}>
                 {post.excerpt.rendered.replace(/(<([^>]+)>)/gi, "")}
@@ -88,12 +89,14 @@ export default function SomosKudasaiNews() {
   );
 }
 
+const windowWidth = Dimensions.get("window").width;
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     justifyContent: "center",
     alignItems: "center",
-    padding: 16,
+    paddingVertical: 46,
   },
   title: {
     fontWeight: "bold",
@@ -106,32 +109,33 @@ const styles = StyleSheet.create({
     width: 300,
     height: 100,
     borderRadius: 25,
-    marginBottom: 10,
+    marginBottom: 20,
   },
   postContainer: {
     marginBottom: 20,
-    width: "100%",
     paddingHorizontal: 16,
     paddingVertical: 12,
     backgroundColor: "#f0f0f0",
     borderRadius: 10,
     elevation: 2,
-    alignItems: "center",
+    flexDirection: "column",
+    alignItems: "flex-start",
   },
   postContent: {
     flexDirection: "row",
     alignItems: "center",
-    flex: 1,
+    width: "90%",
   },
   postImage: {
-    width: 100,
-    height: 100,
+    width: 90,
+    height: 90,
     borderRadius: 10,
     marginRight: 16,
   },
-  postText: {
+  postTextContainer: {
     flex: 1,
-    color: "black",
+    justifyContent: "center",
+    width: "70%",
   },
   postTitle: {
     fontSize: 18,
