@@ -43,6 +43,7 @@ export default function UniversityInfo() {
         onChangeText={(text) => setCountry(text)}
       />
       <Button title="Buscar" onPress={fetchUniversities} />
+      <Text></Text>
       <FlatList
         data={universities}
         keyExtractor={(item) => item.name}
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 12,
     paddingHorizontal: 8,
-    width: "70%",
+    width: "90%",
     borderRadius: 10,
   },
   universityBox: {
