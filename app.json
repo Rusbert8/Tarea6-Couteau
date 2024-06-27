@@ -1,26 +1,26 @@
 {
   "expo": {
-    "name": "OnePiece-ReactNative",
-    "slug": "OnePiece-ReactNative",
+    "name": "Couteau-App",
+    "slug": "Couteau-App",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/foto2x2.jpg",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/cajaHerramientas.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "white"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/foto2x2.jpg",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.rusbert8.OnePieceReactNative"
+      "package": "com.rusbert8.Couteau-App"
     },
     "web": {
       "bundler": "metro",
