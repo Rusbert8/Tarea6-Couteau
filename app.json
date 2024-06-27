@@ -1,26 +1,26 @@
 {
   "expo": {
     "name": "Couteau-App",
-    "slug": "Couteau-App",
+    "slug": "couteau-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/foto2x2.jpg",
+    "icon": "./assets/images/foto2x2.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/cajaHerramientas.png",
       "resizeMode": "contain",
-      "backgroundColor": "white"
+      "backgroundColor": "#ffffff"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/foto2x2.jpg",
+        "foregroundImage": "./assets/images/foto2x2.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.rusbert8.Couteau-App"
+      "package": "com.rusbert8.couteauapp"
     },
     "web": {
       "bundler": "metro",
@@ -36,8 +36,9 @@
         "origin": false
       },
       "eas": {
-        "projectId": "7fd0bb7d-0011-47fe-a05d-59966bb768cc"
+        "projectId": "e8783218-9deb-47a3-8df9-7fe3af92540b"
       }
-    }
+    },
+    "owner": "rusbertitla"
   }
 }

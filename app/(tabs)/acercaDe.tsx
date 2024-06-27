@@ -5,7 +5,7 @@ export default function acercaDe() {
     <View style={styles.container}>
       <Text style={styles.title}>Perfil del Estudiante</Text>
       <Image
-        source={require("../../assets/images/foto2x2.jpg")}
+        source={require("../../assets/images/foto2x2.png")}
         style={styles.image}
       />
       <Text style={styles.name}>Rusbert Antonelly Sánchez Rosario</Text>
