@@ -21,6 +21,7 @@ interface IUniversity {
 export default function UniversityInfo() {
   const [country, setCountry] = useState("");
   const [universities, setUniversities] = useState<IUniversity[]>([]);
+  const [searched, setSearched] = useState(false);
 
   const fetchUniversities = async () => {
     try {
@@ -28,6 +29,7 @@ export default function UniversityInfo() {
         `http://universities.hipolabs.com/search?country=${country}`
       );
       setUniversities(response.data);
+      setSearched(true);
     } catch (error) {
       console.error("Error fetching universities:", error);
     }
@@ -35,7 +37,7 @@ export default function UniversityInfo() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Búsqueda de Universidades</Text>
+      <Text style={styles.title}>Buscador de Universidades</Text>
       <TextInput
         style={styles.input}
         placeholder="Introduce un nombre de país en inglés..."
@@ -64,7 +66,9 @@ export default function UniversityInfo() {
             </Text>
           </View>
         )}
-        ListEmptyComponent={<Text>No se encontraron universidades.</Text>}
+        ListEmptyComponent={
+          searched ? <Text>No se encontraron universidades.</Text> : null
+        }
       />
     </View>
   );
@@ -113,5 +117,6 @@ const styles = StyleSheet.create({
   universityDomains: {
     fontSize: 14,
     color: "gray",
+    marginBottom: 5,
   },
 });

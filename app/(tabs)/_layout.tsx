@@ -21,7 +21,7 @@ export default function TabLayout() {
           title: "",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
-              name={focused ? "film" : "film-outline"}
+              name={focused ? "home" : "home-outline"}
               color={color}
             />
           ),
@@ -33,19 +33,55 @@ export default function TabLayout() {
           title: "",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
-              name={focused ? "people" : "people-outline"}
+              name={focused ? "male-female" : "male-female-outline"}
               color={color}
             />
           ),
         }}
       />
       <Tabs.Screen
-        name="momentos"
+        name="agePrediction"
         options={{
           title: "",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
-              name={focused ? "images" : "images-outline"}
+              name={focused ? "person" : "person-outline"}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="universityInfo"
+        options={{
+          title: "",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={focused ? "school" : "school-outline"}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="weatherPrediction"
+        options={{
+          title: "",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={focused ? "cloud" : "cloud-outline"}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="somosKudasaiNews"
+        options={{
+          title: "",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={focused ? "newspaper" : "newspaper-outline"}
               color={color}
             />
           ),
@@ -58,30 +94,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
               name={focused ? "information" : "information-outline"}
-              color={color}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="miVida"
-        options={{
-          title: "",
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "videocam" : "videocam-outline"}
-              color={color}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="contratame"
-        options={{
-          title: "",
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "briefcase" : "briefcase-outline"}
               color={color}
             />
           ),
