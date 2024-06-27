@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 
-export default function Contratame() {
+export default function acercaDe() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Perfil del Estudiante</Text>
